@@ -52,7 +52,7 @@ if __name__ == "__main__":
     print("Type 'done' when you have finished entering all foods.")
     print("-" * 30)
     while True:
-        name = input("Enter food name (or 'done' to finish): ").strip()
+        name = input("\nEnter food name (or 'done' to finish): ").strip()
         if name.lower() == 'done':
             break
         try:
