@@ -21,10 +21,10 @@ def calculate_daily_nutrition(food_list):
         total_carbs += food.carbs
         total_fat += food.fat
     print("=== 24-hour Mutritional Intake Summary ===")
-    print(f"Total calories: {total_calories:.2f} kilocalories")
-    print(f"Total protein: {total_protein:.2f} grams")
-    print(f"Total carbs: {total_carbs:.2f} grams")
-    print(f"Total fat: {total_fat:.2f} grams")
+    print(f"Total calories: {total_calories:.2f} kcal")
+    print(f"Total protein: {total_protein:.2f} g")
+    print(f"Total carbs: {total_carbs:.2f} g")
+    print(f"Total fat: {total_fat:.2f} g")
     WARNING_CALORIES = 2500
     WARNING_FAT = 90
     warnings = []
@@ -46,13 +46,26 @@ def calculate_daily_nutrition(food_list):
         }
 
 if __name__ == "__main__":
-    apple = FoodItem("Apple", 60, 0.3, 15, 0.5)
-    sandwich = FoodItem("Chicken Sandwich", 450, 25, 40, 20)
-    pasta = FoodItem("Pasta with Sauce", 600, 18, 85, 22)
-    salad = FoodItem("Greek Salad", 350, 12, 10, 28)
-    pizza = FoodItem("Pizza Slice", 300, 12, 36, 12)
-    daily_diet = [apple, sandwich, pasta, salad, pizza]
-    totals = calculate_daily_nutrition(daily_diet)
-    print("\nThe returned summary dictionary:\n", totals)
+    daily_diet = []
+    print("=== Daily Nutrition Tracker ===")
+    print("Please enter the foods you ate today.")
+    print("Type 'done' when you have finished entering all foods.")
+    print("-" * 30)
+    while True:
+        name = input("Enter food name (or 'done' to finish): ").strip()
+        if name.lower() == 'done':
+            break
+        try:
+            calories = float(input("Enter calories (kcal): "))
+            protein = float(input("Enter protein (g): "))
+            carbs = float(input("Enter carbohydrates (g): "))
+            fat = float(input("Enter fat (g): "))
+            new_food = FoodItem(name, calories, protein, carbs, fat)
+            daily_diet.append(new_food)
+        except ValueError:
+            print("Invalid input. Please enter numbers for nutrition values.")
+        totals = calculate_daily_nutrition(daily_diet)
+        print("<br/>Calculation complete.")
+        print("\nThe returned summary dictionary:\n", totals)
 
 input("Press enter to exit.")
