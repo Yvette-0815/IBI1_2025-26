@@ -58,6 +58,8 @@ plt.tight_layout()
 plt.savefig(f'dalys_trend_{country_to_plot}.png', dpi=300)
 plt.show()
 
+# Question: What was the distribution of DALYs in all countries in 2019?
+
 plt.figure(figsize=(6, 4))
 plt.hist(recent_data['DALYs'], bins=30, edgecolor='black', alpha=0.7)
 plt.title('Distribution of DALYs across all countries in 2019')
