@@ -45,7 +45,7 @@ if __name__ == "__main__":
     except ValueError as e:
         print(f"Invalid sequence {e}.")
 
-     user_test_sequence = input("Enter an amino acid sequence: ").strip()
+    user_test_sequence = input("Enter an amino acid sequence: ").strip()
     try:
         user_mass = calculate_protein_mass(user_test_sequence)
         print(f"The mass of {user_test_sequence} is {user_mass:.2f} amu.")
