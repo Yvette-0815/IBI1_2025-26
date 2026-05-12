@@ -1,0 +1,2 @@
+During my first course in IBI1, I have learnt version control, how to control with Git and how to collaborate using GitHub.
+I also created and deployed a personal website with GitHub pages, and was able to edit this file to show changes in the lecture.
