@@ -1,0 +1,13 @@
+Reflection on Practical 9: Modelling Infections
+
+What I learned most:
+Through building the probabilistic SIR models, I learned that even simple assumptions (random infection/recovery) can generate complex, realistic epidemic patterns. The spatial model particularly showed how local interactions create emergent global spread patterns.
+
+Biggest challenge:
+Debugging the 2D spatial model was tricky. I had to carefully handle boundary conditions and synchronous updates to prevent cells from being infected multiple times in one time step.
+
+Future improvement:
+I'd add an "Exposed" (latent) state to create an SEIR model, showing how incubation periods affect outbreak timing and severity.
+
+Overall experience:
+This practical made abstract epidemiological concepts tangible. Seeing the code produce different outbreak curves each run highlighted the importance of stochasticity in real-world disease modeling.
